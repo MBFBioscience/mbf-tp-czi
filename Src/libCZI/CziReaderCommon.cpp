@@ -46,7 +46,7 @@ using namespace libCZI;
 {
     bool foundASubBlock = false;
     SubBlockStatistics s = repository->GetStatistics();
-    if (!s.dimBounds.IsValid(DimensionIndex::C))
+    if (!s.dimBounds.IsValid(DimensionIndex::C) || channelIndex == (numeric_limits<int>::min)())
     {
         // in this case -> just take the first subblock...
         repository->EnumerateSubBlocks(
